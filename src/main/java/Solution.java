@@ -19,7 +19,11 @@ interface Walkable {
     void walk();
 }
 
-class Bird extends Animal implements Walkable{
+interface Singable {
+    void sing();
+}
+
+class Bird extends Animal implements Walkable {
     void sing() {
         System.out.println("I am singing");
     }
@@ -41,13 +45,13 @@ class Duck extends Bird implements Swimmable, Talkable, Flyable {
     }
 }
 
-class Chicken extends Bird implements Talkable {
+class Chicken extends Bird {
     public void talk() {
         System.out.println("Cluck, cluck");
     }
 }
 
-class Rooster extends Bird implements Talkable {
+class Rooster extends Bird {
     public void talk() {
         System.out.println("Cock-a-doodle-doo");
     }
@@ -65,7 +69,7 @@ class Cat extends Animal implements Talkable {
     }
 }
 
-class Parrot extends Bird implements Talkable{
+class Parrot extends Bird implements Singable {
     Talkable neighbor;
 
     public Parrot(Talkable t) {
@@ -74,6 +78,10 @@ class Parrot extends Bird implements Talkable{
 
     public void talk() {
         if (null != neighbor) neighbor.talk();
+    }
+
+    public void sing() {
+        System.out.println("Parrot singing!");
     }
 }
 
@@ -117,7 +125,7 @@ class ClownFish extends Fish {
     }
 }
 
-class Dolphin implements Swimmable {
+class Dolphin extends Animal implements Swimmable {
     public void swim() {
         System.out.println("Swimming");
     }
@@ -141,9 +149,30 @@ class CaterPillar extends Animal implements Walkable {
 
 public class Solution {
     public static void main(String[] args) {
-        Bird bird = new Bird();
-        bird.walk();
-        //bird.fly();
-        bird.sing();
+        Animal[] animals = new Animal[]{ new Bird(),
+                new Duck(),
+                new Chicken(),
+                new Rooster(),
+                new Parrot(new Dog()),
+                new Fish(),
+                new Shark(),
+                new ClownFish(),
+                new Dolphin(),
+                new Dog(),
+                new Butterfly(),
+                new Cat()
+        };
+
+        int flyables = 0, walkables = 0, singables = 0, swimmables= 0;
+        for (Animal a : animals) {
+            if (a instanceof Flyable) flyables++;
+            if (a instanceof Walkable) walkables++;
+            if (a instanceof Singable) singables++;
+            if (a instanceof Swimmable) swimmables++;
+        }
+
+        System.out.println(String.format("Out of %d animals, %d can fly," +
+                " %d can walk, %d can sing, %d can swim", animals.length,
+                flyables, walkables, singables, swimmables));
     }
 }
