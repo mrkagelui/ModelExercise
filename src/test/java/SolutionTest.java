@@ -49,7 +49,7 @@ class SolutionTest {
     public void roosterTest() {
         Rooster r = new Rooster();
         r.talk();
-        assertEquals("Cock-a-doodle-doo\n", outContent.toString());
+        assertEquals("Ohkohkohkohkohh\n", outContent.toString());
     }
 
     @Test

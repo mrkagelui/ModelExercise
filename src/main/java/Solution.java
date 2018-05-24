@@ -53,7 +53,8 @@ class Chicken extends Bird {
 
 class Rooster extends Bird {
     public void talk() {
-        System.out.println("Cock-a-doodle-doo");
+        // I speak Mandarin, Cantonese, English and a bit of Japanese; this is Cantonese (sort of)
+        System.out.println("Ohkohkohkohkohh");
     }
 }
 
