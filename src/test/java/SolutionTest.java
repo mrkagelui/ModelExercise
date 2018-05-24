@@ -51,4 +51,15 @@ class SolutionTest {
         r.talk();
         assertEquals("Cock-a-doodle-doo\n", outContent.toString());
     }
+
+    @Test
+    public void parrotTest() {
+        Parrot p0 = new Parrot(new Dog());
+        p0.talk();
+        assertEquals("Woof, woof\n", outContent.toString());
+        outContent.reset();
+        Parrot p1 = new Parrot(new Cat());
+        p1.talk();
+        assertEquals("Meow\n", outContent.toString());
+    }
 }

@@ -47,6 +47,30 @@ class Rooster extends Bird implements Talkable {
     }
 }
 
+class Dog extends Animal implements Talkable {
+    public void talk() {
+        System.out.println("Woof, woof");
+    }
+}
+
+class Cat extends Animal implements Talkable {
+    public void talk() {
+        System.out.println("Meow");
+    }
+}
+
+class Parrot extends Bird implements Talkable{
+    Talkable neighbor;
+
+    public Parrot(Talkable t) {
+        neighbor = t;
+    }
+
+    public void talk() {
+        if (null != neighbor) neighbor.talk();
+    }
+}
+
 public class Solution {
     public static void main(String[] args) {
         Bird bird = new Bird();
