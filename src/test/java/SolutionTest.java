@@ -83,4 +83,11 @@ class SolutionTest {
         cf.joke();
         assertEquals("Broken pencils are pointless.\n", outContent.toString());
     }
+
+    @Test
+    public void dolphinTest() {
+        Dolphin d = new Dolphin();
+        d.swim();
+        assertEquals("Swimming\n", outContent.toString());
+    }
 }

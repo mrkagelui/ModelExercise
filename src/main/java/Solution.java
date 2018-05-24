@@ -117,6 +117,12 @@ class ClownFish extends Fish {
     }
 }
 
+class Dolphin implements Swimmable {
+    public void swim() {
+        System.out.println("Swimming");
+    }
+}
+
 public class Solution {
     public static void main(String[] args) {
         Bird bird = new Bird();
