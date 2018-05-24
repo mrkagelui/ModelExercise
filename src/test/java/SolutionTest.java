@@ -62,4 +62,11 @@ class SolutionTest {
         p1.talk();
         assertEquals("Meow\n", outContent.toString());
     }
+
+    @Test
+    public void fishTest() {
+        Fish f = new Fish();
+        f.swim();
+        assertEquals("I'm swimming!\n", outContent.toString());
+    }
 }

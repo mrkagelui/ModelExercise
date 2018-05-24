@@ -1,7 +1,4 @@
 class Animal {
-    void walk() {
-        System.out.println("I am walking");
-    }
 }
 
 interface Talkable {
@@ -16,9 +13,16 @@ interface Flyable {
     void fly();
 }
 
-class Bird extends Animal {
+interface Walkable {
+    void walk();
+}
+
+class Bird extends Animal implements Walkable{
     void sing() {
         System.out.println("I am singing");
+    }
+    public void walk() {
+        System.out.println("I am walking");
     }
 }
 
@@ -68,6 +72,12 @@ class Parrot extends Bird implements Talkable{
 
     public void talk() {
         if (null != neighbor) neighbor.talk();
+    }
+}
+
+class Fish extends Animal implements Swimmable {
+    public void swim() {
+        System.out.println("I'm swimming!");
     }
 }
 
