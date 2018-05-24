@@ -123,6 +123,22 @@ class Dolphin implements Swimmable {
     }
 }
 
+class Butterfly extends Animal implements Flyable {
+    public void fly() {
+        System.out.println("Butterfly flying!");
+    }
+}
+
+class CaterPillar extends Animal implements Walkable {
+    public void walk() {
+        System.out.println("Caterpillar crawling");
+    }
+
+    public Butterfly grow() {
+        return new Butterfly();
+    }
+}
+
 public class Solution {
     public static void main(String[] args) {
         Bird bird = new Bird();

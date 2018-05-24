@@ -90,4 +90,22 @@ class SolutionTest {
         d.swim();
         assertEquals("Swimming\n", outContent.toString());
     }
+
+    @Test
+    public void butterflyTest() {
+        Butterfly b = new Butterfly();
+        b.fly();
+        assertEquals("Butterfly flying!\n", outContent.toString());
+    }
+
+    @Test
+    public void caterpillarTest() {
+        CaterPillar george = new CaterPillar();
+        george.walk();
+        assertEquals("Caterpillar crawling\n", outContent.toString());
+        outContent.reset();
+        Butterfly georgeReformed = george.grow();
+        georgeReformed.fly();
+        assertEquals("Butterfly flying!\n", outContent.toString());
+    }
 }
