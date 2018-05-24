@@ -44,4 +44,11 @@ class SolutionTest {
         c.talk();
         assertEquals("Cluck, cluck\n", outContent.toString());
     }
+
+    @Test
+    public void roosterTest() {
+        Rooster r = new Rooster();
+        r.talk();
+        assertEquals("Cock-a-doodle-doo\n", outContent.toString());
+    }
 }

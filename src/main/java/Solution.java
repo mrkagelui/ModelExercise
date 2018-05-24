@@ -41,6 +41,12 @@ class Chicken extends Bird implements Talkable {
     }
 }
 
+class Rooster extends Bird implements Talkable {
+    public void talk() {
+        System.out.println("Cock-a-doodle-doo");
+    }
+}
+
 public class Solution {
     public static void main(String[] args) {
         Bird bird = new Bird();
