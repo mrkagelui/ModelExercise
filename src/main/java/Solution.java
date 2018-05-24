@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 class Animal {
 }
 
@@ -76,8 +78,42 @@ class Parrot extends Bird implements Talkable{
 }
 
 class Fish extends Animal implements Swimmable {
+    protected Size size;
+    protected Color color;
     public void swim() {
         System.out.println("I'm swimming!");
+    }
+}
+
+enum Size {
+    LARGE,
+    SMALL
+}
+
+enum Color {
+    GREY,
+    ORANGE
+}
+
+class Shark extends Fish {
+    public Shark() {
+        size = Size.LARGE;
+        color = Color.GREY;
+    }
+
+    public void eat(Fish f) {
+        System.out.println("Yum!");
+    }
+}
+
+class ClownFish extends Fish {
+    public ClownFish() {
+        size = Size.SMALL;
+        color = Color.ORANGE;
+    }
+
+    public void joke() {
+        System.out.println("Broken pencils are pointless.");
     }
 }
 

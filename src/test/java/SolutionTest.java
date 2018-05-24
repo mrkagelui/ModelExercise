@@ -69,4 +69,18 @@ class SolutionTest {
         f.swim();
         assertEquals("I'm swimming!\n", outContent.toString());
     }
+
+    @Test
+    public void sharkTest() {
+        Shark s = new Shark();
+        s.eat(new Fish());
+        assertEquals("Yum!\n", outContent.toString());
+    }
+
+    @Test
+    public void clownFishTest() {
+        ClownFish cf = new ClownFish();
+        cf.joke();
+        assertEquals("Broken pencils are pointless.\n", outContent.toString());
+    }
 }
